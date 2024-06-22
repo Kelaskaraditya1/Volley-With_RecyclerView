@@ -47,4 +47,5 @@ open class RecyclerViewAdapter(var context_:Context,var userList_:UserInfo) :Rec
         Glide.with(context).load(userList.get(position).avatar_url).into(holder.profileImage)
         holder.profileName.setText(userList.get(position).login)
     }
+
 }

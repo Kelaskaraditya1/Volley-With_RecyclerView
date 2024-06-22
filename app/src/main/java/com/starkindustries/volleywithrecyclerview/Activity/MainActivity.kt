@@ -18,6 +18,7 @@ import com.starkindustries.volleywithrecyclerview.Adapter.RecyclerViewAdapter
 import com.starkindustries.volleywithrecyclerview.Data.UserInfo
 import com.starkindustries.volleywithrecyclerview.Data.UserInfoItem
 import com.starkindustries.volleywithrecyclerview.R
+import com.starkindustries.volleywithrecyclerview.Singleton.Singleton
 import com.starkindustries.volleywithrecyclerview.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
@@ -47,8 +48,9 @@ class MainActivity : AppCompatActivity() {
                 {
                     Log.d("error","The error is:"+it.message.toString().trim())
                 })
-            var queue:RequestQueue = Volley.newRequestQueue(applicationContext)
-            queue.add(request)
+//            var queue:RequestQueue = Volley.newRequestQueue(applicationContext)
+//            queue.add(request)
+            Singleton.singleTon(applicationContext).addRequest(request)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
