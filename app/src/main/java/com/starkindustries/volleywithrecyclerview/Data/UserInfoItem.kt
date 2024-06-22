@@ -1,5 +1,4 @@
 package com.starkindustries.volleywithrecyclerview.Data
-
 data class UserInfoItem(
     val avatar_url: String,
     val events_url: String,
